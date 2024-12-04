@@ -1,5 +1,6 @@
 #define BACKWARD_HAS_DW 1
-#include "backward.hpp"
+#include"opencv2/imgcodecs/legacy/constants_c.h"
+#include “code_utils/backward.hpp”
 namespace backward
 {
 backward::SignalHandling sh;
@@ -91,7 +92,7 @@ test1( )
     std::cout << "sumPixelRow cost " << time.toc( ) << " ms\n";
 
     cv::Mat img2;
-    normalize( img, img2, 0, 255, CV_MINMAX );
+    normalize( img, img2, 0, 255, NORM_MINMAX );
     Mat imageIntegralNorm;
     convertScaleAbs( img2, imageIntegralNorm );
 
@@ -114,7 +115,7 @@ test2( )
     std::cout << "sumPixelRow cost " << time.toc( ) << " ms\n";
 
     cv::Mat img2;
-    normalize( img, img2, 0, 255, CV_MINMAX );
+    normalize( img, img2, 0, 255, NORM_MINMAX );
     Mat imageIntegralNorm;
     convertScaleAbs( img2, imageIntegralNorm );
 
